@@ -1,0 +1,10 @@
+<% form_for @image, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.label :image %>
+  <%= f.file_field :image %>
+
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

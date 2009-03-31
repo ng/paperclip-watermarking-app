@@ -1,0 +1,23 @@
+<h1>Listing images</h1>
+
+<h2>We are using the following watermark: /images/watermark.png"</h2>
+<%= image_tag "/images/watermark.png", :alt => "watermark" %>
+
+<table>
+  <tr>
+	<th>Resized Image</th>
+  </tr>
+
+<% @images.each do |image| %>
+  <tr>
+	<td><%= image_tag(image.image.url(:resized)) -%></td>
+    <td><%= link_to 'Show', image %></td>
+    <td><%= link_to 'Edit', edit_image_path(image) %></td>
+    <td><%= link_to 'Destroy', image, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New image', new_image_path %>

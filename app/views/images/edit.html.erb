@@ -1,0 +1,19 @@
+<h1>Editing image</h1>
+
+<%= render :partial => "form" -%>
+
+
+
+<%= link_to 'Show', @image %> | <%= link_to 'Back', images_path %>
+
+<hr>
+
+<p>original:</p>
+<%= image_tag(@image.image.url(:original)) %>
+
+<p>thumb:</p>
+<%= image_tag(@image.image.url(:thumb)) %>
+
+<p>resize:</p>
+<%= image_tag(@image.image.url(:resized)) %>
+
